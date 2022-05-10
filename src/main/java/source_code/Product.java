@@ -13,8 +13,11 @@ public abstract class Product {
         this.verhuurPrijs = verhuurPrijs;
         this.verzekeringPrijs = verzekeringPrijs;
     }
+    public String getNaam() {
+        return naam;
+    }
 
-    public boolean isOpVoorraad() {
+    public boolean getOpVoorraad() {
         return opVoorraad;
     }
 
