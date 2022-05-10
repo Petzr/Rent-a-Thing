@@ -2,11 +2,13 @@ package source_code;
 
 public abstract class Product {
 
-    private String naam;    private boolean opVoorraad;
+    private String naam;
+    private boolean opVoorraad;
     private double verhuurPrijs;
     private double verzekeringPrijs;
 
-    public Product(double verhuurPrijs, double verzekeringPrijs) {
+    public Product(String naam, double verhuurPrijs, double verzekeringPrijs) {
+        this.naam = naam;
         this.opVoorraad = true;
         this.verhuurPrijs = verhuurPrijs;
         this.verzekeringPrijs = verzekeringPrijs;
@@ -26,5 +28,13 @@ public abstract class Product {
 
     public double getVerzekeringPrijs(int aantalDagen) {
         return verzekeringPrijs * aantalDagen;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "naam='" + getClass() + '\'' +
+                ", opVoorraad=" + opVoorraad +
+                '}';
     }
 }

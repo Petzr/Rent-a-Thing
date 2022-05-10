@@ -8,8 +8,8 @@ class ProductTest {
 
     @Test
     void getVerhuurPrijs() {
-        Vrachtwagen vrachtwagen = new Vrachtwagen(50, 100);
-        PersonenAuto personenAuto =  new PersonenAuto("merk", 50);
+        Vrachtwagen vrachtwagen = new Vrachtwagen("naam", 50, 100);
+        PersonenAuto personenAuto =  new PersonenAuto("naam", "merk", 50);
 
         double expectedVrachtwagenTrue = 30;
         double expectedVrachtwagenFalse = 25;
