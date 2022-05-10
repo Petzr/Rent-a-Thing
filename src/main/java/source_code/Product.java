@@ -16,8 +16,12 @@ public abstract class Product {
         return opVoorraad;
     }
 
-    public double getVerhuurPrijs(int aantalDagen) {
-        return verhuurPrijs * aantalDagen;
+    public double getVerhuurPrijs(int aantalDagen, boolean isVerzekerd) {
+        double prijs = verhuurPrijs * aantalDagen;
+        if (isVerzekerd) {
+            prijs += getVerzekeringPrijs(aantalDagen);
+        }
+        return prijs;
     }
 
     public double getVerzekeringPrijs(int aantalDagen) {
