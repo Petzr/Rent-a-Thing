@@ -13,7 +13,11 @@ public class Vrachtwagen extends Product{
 
     @Override
     public double getVerhuurPrijs(int aantalDagen, boolean isVerzekerd) {
-        return super.getVerhuurPrijs(aantalDagen, isVerzekerd) * laadVermogenInKG;
+        double prijs = 0.1 * laadVermogenInKG * aantalDagen;
+        if (isVerzekerd) {
+            prijs += getVerzekeringPrijs(aantalDagen);
+        }
+        return prijs;
     }
 
     @Override
