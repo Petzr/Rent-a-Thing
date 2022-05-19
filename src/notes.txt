@@ -1,0 +1,6 @@
+Auto abstract class mogelijkheid
+- gewicht in KG en getter
+- @Override verzekeringPrijs(aantaldagen)
+
+Factory template toepassen
+- Boormachine, PersonenAuto en Vrachtwagen
