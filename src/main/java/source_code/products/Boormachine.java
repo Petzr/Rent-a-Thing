@@ -10,4 +10,12 @@ public class Boormachine extends Product{
         this.merk = merk;
         this.type = type;
     }
+
+    public String getMerk() {
+        return merk;
+    }
+
+    public String getType() {
+        return type;
+    }
 }
