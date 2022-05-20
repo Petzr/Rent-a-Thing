@@ -12,7 +12,12 @@ public class Main {
         ArrayList<Product> products = seeder.getproducts();
 
         for (Product product : products) {
-            System.out.println(product);
+
+            if (product instanceof Boormachine) {
+                System.out.println(((Boormachine) product).getMerk());
+            } else {
+                System.out.println(product);
+            }
         }
     }
 }
