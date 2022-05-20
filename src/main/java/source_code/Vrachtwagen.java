@@ -5,8 +5,8 @@ public class Vrachtwagen extends Product{
     private double laadVermogenInKG;
     private double gewichtInKG;
 
-    public Vrachtwagen(String naam, double laadVermogenInKG, double gewichtInKG) {
-        super(naam, 0.1, 0.01);
+    public Vrachtwagen(double laadVermogenInKG, double gewichtInKG) {
+        super(0.1, 0.01);
         this.laadVermogenInKG = laadVermogenInKG;
         this.gewichtInKG = gewichtInKG;
     }

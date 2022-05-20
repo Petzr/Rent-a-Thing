@@ -2,19 +2,14 @@ package source_code;
 
 public abstract class Product {
 
-    private String naam;
     private boolean opVoorraad;
     private double verhuurPrijs;
     private double verzekeringPrijs;
 
-    public Product(String naam, double verhuurPrijs, double verzekeringPrijs) {
-        this.naam = naam;
+    public Product(double verhuurPrijs, double verzekeringPrijs) {
         this.opVoorraad = true;
         this.verhuurPrijs = verhuurPrijs;
         this.verzekeringPrijs = verzekeringPrijs;
-    }
-    public String getNaam() {
-        return naam;
     }
 
     public boolean getOpVoorraad() {
