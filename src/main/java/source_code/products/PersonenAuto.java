@@ -1,11 +1,11 @@
-package source_code;
+package source_code.products;
 
 public class PersonenAuto extends Product{
     private String merk;
     private double gewichtInKG;
 
-    public PersonenAuto(String naam, String merk, double gewichtInKG) {
-        super(naam, 50, 0.01);
+    public PersonenAuto(String merk, double gewichtInKG) {
+        super(50, 0.01);
         this.merk = merk;
         this.gewichtInKG = gewichtInKG;
     }
