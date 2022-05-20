@@ -8,10 +8,11 @@ public class Seeder {
 
     public Seeder () {
         products.add (new Boormachine("merk", "type"));
-        products.add (new PersonenAuto("merk", "type"));
+        products.add (new PersonenAuto("merk", 100));
+        products.add (new Vrachtwagen(200, 150));
     }
 
-    public ArrayList<Meal> getproducts () {
+    public ArrayList<Product> getproducts () {
         return products;
     }
 
