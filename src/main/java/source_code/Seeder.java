@@ -7,9 +7,15 @@ public class Seeder {
     private ArrayList<Product> products = new ArrayList<>();
 
     public Seeder () {
-        products.add (new Boormachine("merk", "type"));
-        products.add (new PersonenAuto("merk", 100));
-        products.add (new Vrachtwagen(200, 150));
+        products.add (new Boormachine("Bosch", "GSB 18V-55 Professional"));
+        products.add (new Boormachine("Makita", "HP457DWE"));
+        products.add (new Boormachine("Hitachi", "DS18DJLWC "));
+        products.add (new PersonenAuto("Audi", 1200));
+        products.add (new PersonenAuto("Volkswagen", 1300));
+        products.add (new PersonenAuto("Ford", 1050));
+        products.add (new Vrachtwagen(22000, 3000));
+        products.add (new Vrachtwagen(18000, 2700));
+        products.add (new Vrachtwagen(15000, 2500));
     }
 
     public ArrayList<Product> getproducts () {
