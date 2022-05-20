@@ -1,5 +1,8 @@
 package source_code;
 
+import source_code.products.Boormachine;
+import source_code.products.Vrachtwagen;
+
 public class Main {
     public static void main(String[] args) {
         Boormachine boormachine = new Boormachine("merk", "type");

@@ -1,5 +1,7 @@
 package source_code;
 
+import source_code.products.Product;
+
 import java.util.ArrayList;
 
 public class Bedrijf {

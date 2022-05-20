@@ -1,4 +1,4 @@
-package source_code;
+package source_code.products;
 
 public class Boormachine extends Product{
 

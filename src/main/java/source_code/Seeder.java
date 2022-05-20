@@ -1,5 +1,10 @@
 package source_code;
 
+import source_code.products.Boormachine;
+import source_code.products.PersonenAuto;
+import source_code.products.Product;
+import source_code.products.Vrachtwagen;
+
 import java.util.ArrayList;
 
 public class Seeder {
