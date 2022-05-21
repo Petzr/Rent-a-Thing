@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Seeder seeder = new Seeder();
-        ArrayList<Product> products = seeder.getproducts();
+        ArrayList<Product> products = seeder.getProducts();
 
         for (Product product : products) {
 
