@@ -9,7 +9,8 @@ import java.util.ArrayList;
 
 public class Seeder {
 
-    private ArrayList<Product> products = new ArrayList<>();
+    private final ArrayList<Product> products = new ArrayList<>();
+    private final ArrayList<Medewerker> medewerkers = new ArrayList<>();
 
     public Seeder () {
         products.add (new Boormachine("Bosch", "GSB 18V-55 Professional"));
@@ -21,14 +22,18 @@ public class Seeder {
         products.add (new Vrachtwagen(22000, 3000));
         products.add (new Vrachtwagen(18000, 2700));
         products.add (new Vrachtwagen(15000, 2500));
+
+        medewerkers.add(new Medewerker("Peter", "Petzr", "asdf"));
+        medewerkers.add(new Medewerker("Karel", "Karel", "asdf"));
+        medewerkers.add(new Medewerker("Daner", "Daner", "asdf"));
     }
 
-    public ArrayList<Product> getproducts () {
+    public ArrayList<Product> getProducts () {
         return products;
     }
 
     public Product getProduct (int index) {
-        if (index < products.size ()) {
+        if (index > 0 && index < products.size ()) {
             return products.get(index);
         }
         else {
@@ -36,4 +41,14 @@ public class Seeder {
         }
     }
 
+    public ArrayList<Medewerker> getMedewerkers() {
+        return medewerkers;
+    }
+    public Medewerker getMedewerker (int index) {
+        if (index > 0 && index < medewerkers.size()) {
+            return medewerkers.get(index);
+        } else {
+            return null;
+        }
+    }
 }
