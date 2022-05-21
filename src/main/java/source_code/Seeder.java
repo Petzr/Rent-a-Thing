@@ -23,6 +23,8 @@ public class Seeder {
         products.add (new Vrachtwagen(18000, 2700));
         products.add (new Vrachtwagen(15000, 2500));
 
+
+        medewerkers.add(new Medewerker("123", "123", "123"));
         medewerkers.add(new Medewerker("Peter", "Petzr", "asdf"));
         medewerkers.add(new Medewerker("Karel", "Karel", "asdf"));
         medewerkers.add(new Medewerker("Daner", "Daner", "asdf"));
