@@ -4,8 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import source_code.Bedrijf;
+import source_code.Medewerker;
+import source_code.Seeder;
 
 public class UserLoginController {
+
+    private Bedrijf bedrijf = new Bedrijf(new Seeder());
 
     @FXML
     private PasswordField passwordField;
@@ -15,10 +20,8 @@ public class UserLoginController {
 
     @FXML
     void loginButtonPressed(ActionEvent event) {
-        System.out.printf("%s, %s\n", usernameField.getText(), passwordField.getText());
-        usernameField.setText("");
-        passwordField.setText("");
-
+        Medewerker medewerker = bedrijf.login(usernameField.getText(), passwordField.getText());
+        System.out.println(medewerker);
     }
 
 }
