@@ -15,6 +15,9 @@ public class UserLoginController {
 
     @FXML
     void loginButtonPressed(ActionEvent event) {
+        System.out.printf("%s, %s\n", usernameField.getText(), passwordField.getText());
+        usernameField.setText("");
+        passwordField.setText("");
 
     }
 
