@@ -12,4 +12,19 @@ public class Bedrijf {
     public void addProduct(Product product) {
         products.add(product);
     }
+    public void addMedewerker(Medewerker medewerker) {
+        medewerkers.add(medewerker);
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public ArrayList<Medewerker> getMedewerkers() {
+        return medewerkers;
+    }
+
+    public Medewerker login(String username, String password) {
+
+    }
 }
