@@ -5,8 +5,6 @@ import source_code.Klant;
 
 public abstract class Product {
 
-    private String korteOmschrijving;
-
     private boolean opVoorraad;
     private Medewerker verhuurdDoor;
     private Klant verhuurdAan;
@@ -20,19 +18,12 @@ public abstract class Product {
         this.verzekeringPrijs = verzekeringPrijs;
     }
 
-    public String getKorteOmschrijving() {
-        return korteOmschrijving;
-    }
 
     public Medewerker getVerhuurdDoor() {
         return verhuurdDoor;
     }
     public Klant getVerhuurdAan() {
         return verhuurdAan;
-    }
-
-    public void setKorteOmschrijving(String korteOmschrijving) {
-        this.korteOmschrijving = korteOmschrijving;
     }
 
     public void setVerhuurdDoor(Medewerker verhuurdDoor) {
@@ -70,4 +61,6 @@ public abstract class Product {
     public void retourProduct() {
         opVoorraad = true;
     }
+
+    public abstract String korteOmschrijvingProduct();
 }
