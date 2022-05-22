@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import source_code.Bedrijf;
-import source_code.Medewerker;
+import source_code.people.Medewerker;
 import source_code.Seeder;
 
 public class UserLogin {

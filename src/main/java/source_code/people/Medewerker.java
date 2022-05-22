@@ -1,4 +1,4 @@
-package source_code;
+package source_code.people;
 
 import source_code.products.Product;
 

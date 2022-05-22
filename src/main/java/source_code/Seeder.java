@@ -1,5 +1,6 @@
 package source_code;
 
+import source_code.people.Medewerker;
 import source_code.products.Boormachine;
 import source_code.products.PersonenAuto;
 import source_code.products.Product;

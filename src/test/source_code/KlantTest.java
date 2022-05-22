@@ -1,6 +1,7 @@
 package source_code;
 
 import org.junit.jupiter.api.Test;
+import source_code.people.Klant;
 
 import static org.junit.jupiter.api.Assertions.*;
 

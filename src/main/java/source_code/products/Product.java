@@ -1,7 +1,7 @@
 package source_code.products;
 
-import source_code.Medewerker;
-import source_code.Klant;
+import source_code.people.Medewerker;
+import source_code.people.Klant;
 
 import java.util.Observable;
 
