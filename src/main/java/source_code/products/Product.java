@@ -66,4 +66,8 @@ public abstract class Product {
                 ", opVoorraad=" + opVoorraad +
                 '}';
     }
+
+    public void retourProduct() {
+        opVoorraad = true;
+    }
 }
