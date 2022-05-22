@@ -37,7 +37,7 @@ public class Seeder {
     }
 
     public Product getProduct (int index) {
-        if (index > 0 && index < products.size ()) {
+        if (index >= 0 && index < products.size ()) {
             return products.get(index);
         }
         else {

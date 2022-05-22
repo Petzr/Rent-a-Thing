@@ -15,8 +15,11 @@ public class Main {
 
         Medewerker medewerker = bedrijf.login("123", "123");
 
-        medewerker.
-
+        medewerker.addVerhuurdeProducten(new Seeder().getProduct(0));
+        for (Product product : medewerker.getVerhuurdeProducten()) {
+            System.out.println(product);
+            System.out.println(product.getVerzekeringPrijs(2));
+        }
     }
 
     private static void setBedrijf(Bedrijf bedrijf) {
