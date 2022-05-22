@@ -1,4 +1,4 @@
-package source_code;
+package java.source_code;
 
 import org.junit.jupiter.api.Test;
 import source_code.people.Klant;

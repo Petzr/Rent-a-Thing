@@ -15,10 +15,10 @@ public class Main {
 
         Medewerker medewerker = bedrijf.login("123", "123");
 
-        medewerker.addVerhuurdeProducten(new Seeder().getProduct(0));
+        medewerker.addVerhuurdeProducten(new Seeder().getProduct(5));
         for (Product product : medewerker.getVerhuurdeProducten()) {
             System.out.println(product);
-            System.out.println(product.getVerzekeringPrijs(2));
+            System.out.println(product.getVerhuurPrijs(4, true));
         }
     }
 
