@@ -20,6 +20,29 @@ public abstract class Product {
         this.verzekeringPrijs = verzekeringPrijs;
     }
 
+    public String getKorteOmschrijving() {
+        return korteOmschrijving;
+    }
+
+    public Medewerker getVerhuurdDoor() {
+        return verhuurdDoor;
+    }
+    public Klant getVerhuurdAan() {
+        return verhuurdAan;
+    }
+
+    public void setKorteOmschrijving(String korteOmschrijving) {
+        this.korteOmschrijving = korteOmschrijving;
+    }
+
+    public void setVerhuurdDoor(Medewerker verhuurdDoor) {
+        this.verhuurdDoor = verhuurdDoor;
+    }
+
+    public void setVerhuurdAan(Klant verhuurdAan) {
+        this.verhuurdAan = verhuurdAan;
+    }
+
     public boolean getOpVoorraad() {
         return opVoorraad;
     }
