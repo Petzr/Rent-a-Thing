@@ -27,7 +27,7 @@ public class Vrachtwagen extends Product{
 
     @Override
     public String korteOmschrijvingProduct() {
-        return String.format("Laadvermogen in KG: %.1f \nGewicht in KG: %.1f", laadVermogenInKG, gewichtInKG);
+        return String.format("Laadvermogen in KG: %.1f \nGewicht in KG: %.1f", getLaadVermogenInKG(), getGewichtInKG());
     }
 
     public double getLaadVermogenInKG() {

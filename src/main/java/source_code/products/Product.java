@@ -3,7 +3,9 @@ package source_code.products;
 import source_code.Medewerker;
 import source_code.Klant;
 
-public abstract class Product {
+import java.util.Observable;
+
+public abstract class Product extends Observable {
 
     private boolean opVoorraad;
     private Medewerker verhuurdDoor;
@@ -50,17 +52,14 @@ public abstract class Product {
         return verzekeringPrijs * aantalDagen;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "naam='" + getClass() + '\'' +
-                ", opVoorraad=" + opVoorraad +
-                '}';
-    }
-
     public void retourProduct() {
         opVoorraad = true;
     }
 
     public abstract String korteOmschrijvingProduct();
+
+    private void updateObservers() {
+        setChanged();
+        notifyObservers();
+    }
 }

@@ -18,7 +18,7 @@ public class PersonenAuto extends Product{
 
     @Override
     public String korteOmschrijvingProduct() {
-        return String.format("Merk: %s \nGewicht in KG: %.1f", merk, gewichtInKG);
+        return String.format("Merk: %s \nGewicht in KG: %.1f", getMerk(), getGewichtInKG());
     }
 
     public String getMerk() {
