@@ -1,8 +1,15 @@
 package source_code.products;
 
+import source_code.Medewerker;
+
 public abstract class Product {
 
+    private String korteOmschrijving;
+
     private boolean opVoorraad;
+    private Medewerker verhuurdDoor;
+    private Klant verhuurdAan;
+
     private double verhuurPrijs;
     private double verzekeringPrijs;
 

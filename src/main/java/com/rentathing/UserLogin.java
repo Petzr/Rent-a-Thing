@@ -8,7 +8,7 @@ import source_code.Bedrijf;
 import source_code.Medewerker;
 import source_code.Seeder;
 
-public class UserLoginController {
+public class UserLogin {
 
     private Bedrijf bedrijf = new Bedrijf(new Seeder());
 
