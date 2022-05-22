@@ -24,4 +24,12 @@ public class Vrachtwagen extends Product{
     public double getVerzekeringPrijs(int aantalDagen) {
         return super.getVerzekeringPrijs(aantalDagen) * gewichtInKG;
     }
+
+    public double getLaadVermogenInKG() {
+        return laadVermogenInKG;
+    }
+
+    public double getGewichtInKG() {
+        return gewichtInKG;
+    }
 }

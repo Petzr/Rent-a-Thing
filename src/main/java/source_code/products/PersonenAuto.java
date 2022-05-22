@@ -14,4 +14,12 @@ public class PersonenAuto extends Product{
     public double getVerzekeringPrijs(int aantalDagen) {
         return super.getVerzekeringPrijs(aantalDagen) * gewichtInKG;
     }
+
+    public String getMerk() {
+        return merk;
+    }
+
+    public double getGewichtInKG() {
+        return gewichtInKG;
+    }
 }
