@@ -1,6 +1,7 @@
 package source_code.products;
 
 import source_code.Medewerker;
+import source_code.Klant;
 
 public abstract class Product {
 

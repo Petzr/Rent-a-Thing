@@ -1,6 +1,8 @@
 package source_code;
 
 import org.junit.jupiter.api.Test;
+import source_code.products.PersonenAuto;
+import source_code.products.Vrachtwagen;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,8 +10,8 @@ class ProductTest {
 
     @Test
     void getVerhuurPrijs() {
-        Vrachtwagen vrachtwagen = new Vrachtwagen("naam", 50, 100);
-        PersonenAuto personenAuto =  new PersonenAuto("naam", "merk", 50);
+        Vrachtwagen vrachtwagen = new Vrachtwagen(50, 100);
+        PersonenAuto personenAuto =  new PersonenAuto("merk", 50);
 
         double expectedVrachtwagenTrue = 30;
         double expectedVrachtwagenFalse = 25;
