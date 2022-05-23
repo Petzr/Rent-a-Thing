@@ -22,6 +22,7 @@ public class UserLogin {
     void loginButtonPressed(ActionEvent event) {
         Medewerker medewerker = bedrijf.login(usernameField.getText(), passwordField.getText());
         System.out.println(medewerker);
+        new MenuVenster(medewerker);
     }
 
 }
