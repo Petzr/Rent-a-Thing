@@ -1,5 +1,6 @@
-package com.rentathing;
+package com.rentathing.controller;
 
+import com.rentathing.MenuVenster;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -8,7 +9,7 @@ import source_code.Bedrijf;
 import source_code.people.Medewerker;
 import source_code.Seeder;
 
-public class UserLogin {
+public class UserLoginController {
 
     private Bedrijf bedrijf = new Bedrijf(new Seeder());
 
