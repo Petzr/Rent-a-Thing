@@ -9,7 +9,10 @@ import java.io.IOException;
 
 public class MenuVenster extends Stage {
 
+    private final Medewerker medewerker;
+
     public MenuVenster(Medewerker medewerker) {
+        this.medewerker = medewerker;
         createStage();
     }
 
@@ -21,7 +24,7 @@ public class MenuVenster extends Stage {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        setTitle("USER LOGIN");
+        setTitle("MENU VENSTER");
         setScene(scene);
         show();
     }
