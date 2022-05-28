@@ -8,4 +8,6 @@ module com.rentathing {
 
     opens com.rentathing to javafx.fxml;
     exports com.rentathing;
+    exports com.rentathing.controller;
+    opens com.rentathing.controller to javafx.fxml;
 }

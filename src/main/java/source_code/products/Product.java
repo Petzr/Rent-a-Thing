@@ -1,10 +1,11 @@
 package source_code.products;
 
-import source_code.Medewerker;
+import source_code.people.Medewerker;
+import source_code.people.Klant;
 
-public abstract class Product {
+import java.util.Observable;
 
-    private String korteOmschrijving;
+public abstract class Product extends Observable {
 
     private boolean opVoorraad;
     private Medewerker verhuurdDoor;
@@ -17,6 +18,22 @@ public abstract class Product {
         this.opVoorraad = true;
         this.verhuurPrijs = verhuurPrijs;
         this.verzekeringPrijs = verzekeringPrijs;
+    }
+
+
+    public Medewerker getVerhuurdDoor() {
+        return verhuurdDoor;
+    }
+    public Klant getVerhuurdAan() {
+        return verhuurdAan;
+    }
+
+    public void setVerhuurdDoor(Medewerker verhuurdDoor) {
+        this.verhuurdDoor = verhuurdDoor;
+    }
+
+    public void setVerhuurdAan(Klant verhuurdAan) {
+        this.verhuurdAan = verhuurdAan;
     }
 
     public boolean getOpVoorraad() {
@@ -35,11 +52,14 @@ public abstract class Product {
         return verzekeringPrijs * aantalDagen;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "naam='" + getClass() + '\'' +
-                ", opVoorraad=" + opVoorraad +
-                '}';
+    public void retourProduct() {
+        opVoorraad = true;
+    }
+
+    public abstract String korteOmschrijvingProduct();
+
+    private void updateObservers() {
+        setChanged();
+        notifyObservers();
     }
 }

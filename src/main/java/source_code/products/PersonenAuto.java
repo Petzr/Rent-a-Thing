@@ -1,6 +1,7 @@
 package source_code.products;
 
 public class PersonenAuto extends Product{
+
     private String merk;
     private double gewichtInKG;
 
@@ -13,6 +14,11 @@ public class PersonenAuto extends Product{
     @Override
     public double getVerzekeringPrijs(int aantalDagen) {
         return super.getVerzekeringPrijs(aantalDagen) * gewichtInKG;
+    }
+
+    @Override
+    public String korteOmschrijvingProduct() {
+        return String.format("Merk: %s \nGewicht in KG: %.1f", getMerk(), getGewichtInKG());
     }
 
     public String getMerk() {
