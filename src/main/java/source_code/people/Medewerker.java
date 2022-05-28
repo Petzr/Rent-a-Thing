@@ -32,7 +32,7 @@ public class Medewerker {
         return verhuurdeProducten;
     }
 
-    public void addVerhuurdeProducten(Product product) {
+    public void addVerhuurdeProduct(Product product) {
         this.verhuurdeProducten.add(product);
     }
 
