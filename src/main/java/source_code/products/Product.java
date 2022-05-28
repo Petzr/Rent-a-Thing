@@ -8,8 +8,6 @@ import java.util.Observable;
 public abstract class Product extends Observable {
 
     private boolean opVoorraad;
-    private Medewerker verhuurdDoor;
-    private Klant verhuurdAan;
 
     private double verhuurPrijs;
     private double verzekeringPrijs;
@@ -20,21 +18,6 @@ public abstract class Product extends Observable {
         this.verzekeringPrijs = verzekeringPrijs;
     }
 
-
-    public Medewerker getVerhuurdDoor() {
-        return verhuurdDoor;
-    }
-    public Klant getVerhuurdAan() {
-        return verhuurdAan;
-    }
-
-    public void setVerhuurdDoor(Medewerker verhuurdDoor) {
-        this.verhuurdDoor = verhuurdDoor;
-    }
-
-    public void setVerhuurdAan(Klant verhuurdAan) {
-        this.verhuurdAan = verhuurdAan;
-    }
 
     public boolean getOpVoorraad() {
         return opVoorraad;
