@@ -4,9 +4,7 @@ import source_code.people.Klant;
 import source_code.people.Medewerker;
 import source_code.products.Product;
 
-import java.util.Observable;
-
-public class Verhuur extends Observable {
+public class Verhuur {
 
     private Product verhuurdProduct;
     private Medewerker verhuurdDoor;
