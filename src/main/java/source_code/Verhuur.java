@@ -1,7 +1,8 @@
-package source_code.products;
+package source_code;
 
 import source_code.people.Klant;
 import source_code.people.Medewerker;
+import source_code.products.Product;
 
 public class Verhuur {
 
@@ -25,4 +26,11 @@ public class Verhuur {
         return verhuurdProduct;
     }
 
+    public double verhuurPrijs(int aantaldagen, boolean isVerzekerd) {
+        return verhuurdProduct.getVerhuurPrijs(aantaldagen, isVerzekerd);
+    }
+
+    public double verzekeringPrijs(int aantaldagen) {
+        return verhuurdProduct.getVerzekeringPrijs(aantaldagen);
+    }
 }
