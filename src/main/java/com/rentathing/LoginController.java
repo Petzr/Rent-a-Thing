@@ -2,8 +2,9 @@ package com.rentathing;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -11,22 +12,28 @@ import source_code.Bedrijf;
 import source_code.people.Medewerker;
 import source_code.Seeder;
 
-import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class UserController {
+public class LoginController implements Initializable {
 
     private Bedrijf bedrijf = new Bedrijf(new Seeder());
 
     @FXML
     private PasswordField passwordField;
-
+    @FXML
+    private Label errorMessage;
     @FXML
     private TextField usernameField;
 
     @FXML
     void loginButtonPressed(ActionEvent event) {
         Medewerker medewerker = bedrijf.login(usernameField.getText(), passwordField.getText());
-        System.out.println(medewerker);
+        if (medewerker == null) {
+            errorMessage.setVisible(true);
+            return;
+        }
+        errorMessage.setVisible(false);
 
         Stage stage = new Stage();
         Scene scene = IControllerInfo.createScene(medewerker, "menu-venster.fxml", new MenuController());
@@ -36,4 +43,8 @@ public class UserController {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        errorMessage.setVisible(false);
+    }
 }

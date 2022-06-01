@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rentathing.UserController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rentathing.LoginController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -114,6 +114,14 @@
                               </PasswordField>
                            </children>
                         </HBox>
+                        <Label fx:id="errorMessage" text="TRY AGAIN, no user found" textFill="RED">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
                         <Button mnemonicParsing="false" onAction="#loginButtonPressed" text="Login" textAlignment="CENTER" />
                      </children>
                   </VBox>

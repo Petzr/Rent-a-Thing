@@ -2,12 +2,16 @@ package com.rentathing;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import source_code.people.Medewerker;
 
-public class MenuController implements IControllerInfo {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MenuController implements IControllerInfo, Initializable {
 
     private Medewerker medewerker;
 
@@ -30,5 +34,10 @@ public class MenuController implements IControllerInfo {
     @Override
     public void setMedewerker(Medewerker medewerker) {
         this.medewerker = medewerker;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        medewerkerLabel.setText(medewerker.getNaam());
     }
 }
