@@ -13,7 +13,7 @@ import source_code.Seeder;
 
 import java.io.IOException;
 
-public class UserLoginController {
+public class UserController {
 
     private Bedrijf bedrijf = new Bedrijf(new Seeder());
 
@@ -29,7 +29,7 @@ public class UserLoginController {
         System.out.println(medewerker);
 
         Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(UserLoginController.class.getResource("menu-venster.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(UserController.class.getResource("menu-venster.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load());

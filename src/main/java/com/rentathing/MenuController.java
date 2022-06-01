@@ -1,10 +1,9 @@
 package com.rentathing;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class MenuVensterController {
+public class MenuController {
 
     public Label medewerkerLabel;
 
