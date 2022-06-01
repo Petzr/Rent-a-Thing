@@ -29,7 +29,6 @@ public class UserController {
         System.out.println(medewerker);
 
         Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(UserController.class.getResource("menu-venster.fxml"));
         Scene scene = IControllerInfo.createScene(medewerker, "menu-venster.fxml", new MenuController());
         stage.setTitle("medewerker");
         stage.setScene(scene);
