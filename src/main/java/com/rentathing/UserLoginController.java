@@ -1,13 +1,17 @@
-package com.rentathing.controller;
+package com.rentathing;
 
-import com.rentathing.MenuVenster;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import source_code.Bedrijf;
 import source_code.people.Medewerker;
 import source_code.Seeder;
+
+import java.io.IOException;
 
 public class UserLoginController {
 
@@ -23,7 +27,19 @@ public class UserLoginController {
     void loginButtonPressed(ActionEvent event) {
         Medewerker medewerker = bedrijf.login(usernameField.getText(), passwordField.getText());
         System.out.println(medewerker);
-        new MenuVenster(medewerker);
+
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(UserLoginController.class.getResource("menu-venster.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.setTitle("medewerker");
+        stage.setScene(scene);
+        stage.show();
+
     }
 
 }
