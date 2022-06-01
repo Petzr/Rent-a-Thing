@@ -30,12 +30,7 @@ public class UserController {
 
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(UserController.class.getResource("menu-venster.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxmlLoader.load());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        Scene scene = IControllerInfo.createScene(medewerker, "menu-venster.fxml", new MenuController());
         stage.setTitle("medewerker");
         stage.setScene(scene);
         stage.show();
