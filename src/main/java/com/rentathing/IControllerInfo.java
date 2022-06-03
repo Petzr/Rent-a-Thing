@@ -25,9 +25,9 @@ public interface IControllerInfo {
         try {
             return new Scene(fxmlLoader.load());
         } catch (IOException e) {
-            System.out.println("GEEN FXMLFILE GEVONDEN");
-            return null;
-//            throw new RuntimeException(e);
+            System.out.println("kan fxmlloader niet laden, fout met lezen van file");
+            throw new RuntimeException(e);
+//            return null;
         }
 
     }
