@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
-    private Bedrijf bedrijf = new Bedrijf(new Seeder());
+    private Bedrijf bedrijf;
 
     @FXML
     private PasswordField passwordField;
@@ -36,8 +36,8 @@ public class LoginController implements Initializable {
         errorMessage.setVisible(false);
 
         Stage stage = new Stage();
-        Scene scene = IControllerInfo.createScene(medewerker, "menu-venster.fxml", new MenuController());
-        stage.setTitle("medewerker");
+        Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "menu-venster.fxml", new MenuController());
+        stage.setTitle(medewerker.getNaam());
         stage.setScene(scene);
         stage.show();
 
@@ -45,6 +45,10 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        bedrijf = new Bedrijf(new Seeder());
         errorMessage.setVisible(false);
+
+        usernameField.setText("Petzr");
+        passwordField.setText("asdf");
     }
 }

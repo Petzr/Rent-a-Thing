@@ -4,15 +4,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import source_code.Bedrijf;
 import source_code.people.Medewerker;
+import source_code.products.factory.ProductFactory;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MenuController implements IControllerInfo, Initializable {
 
+    private Bedrijf bedrijf;
     private Medewerker medewerker;
 
     @FXML
@@ -22,6 +26,14 @@ public class MenuController implements IControllerInfo, Initializable {
     }
 
     public void gaNaarOverzicht(ActionEvent actionEvent) {
+        Node node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+
+        DetailController controller = new DetailController();
+        controller.setProduct(ProductFactory.createBoormachine("merk", "type"));
+        Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "detail-venster.fxml", controller);
+
+        stage.setScene(scene);
     }
 
     public void uitloggen(ActionEvent actionEvent) {
@@ -34,6 +46,11 @@ public class MenuController implements IControllerInfo, Initializable {
     @Override
     public void setMedewerker(Medewerker medewerker) {
         this.medewerker = medewerker;
+    }
+
+    @Override
+    public void setBedrijf(Bedrijf bedrijf) {
+        this.bedrijf = bedrijf;
     }
 
     @Override
