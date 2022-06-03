@@ -29,9 +29,7 @@ public class MenuController implements IControllerInfo, Initializable {
         Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
 
-        DetailController controller = new DetailController();
-        controller.setProduct(ProductFactory.createBoormachine("merk", "type"));
-        Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "detail-venster.fxml", controller);
+        Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "overzicht-venster.fxml", new OverzichtController());
 
         stage.setScene(scene);
     }

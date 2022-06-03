@@ -11,28 +11,32 @@ import source_code.products.Product;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DetailController implements IControllerInfo, Initializable {
+public class DetailController implements Initializable, IControllerInfo {
 
-    private Bedrijf bedrijf;
     private Product product;
+    private Bedrijf bedrijf;
     private Medewerker medewerker;
 
     @FXML
     private Label medewerkerLabel;
+
     @FXML
     private Label productSoort;
+
     @FXML
     private Label productVerhuurtAanLabel;
+
     @FXML
     private Label productVerhuurtDoorLabel;
+
     @FXML
     private Label productVerhuurtLabel;
+
     @FXML
     private Label spec1Product;
+
     @FXML
-    private Label spec1Product1;
-    @FXML
-    private Label spec2Product1;
+    private Label spec2Product;
 
     @FXML
     void productHuren(ActionEvent event) {
@@ -42,6 +46,10 @@ public class DetailController implements IControllerInfo, Initializable {
     @FXML
     void productRetouren(ActionEvent event) {
 
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     @Override
@@ -54,10 +62,6 @@ public class DetailController implements IControllerInfo, Initializable {
         this.bedrijf = bedrijf;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         medewerkerLabel.setText(medewerker.getNaam());
@@ -66,6 +70,5 @@ public class DetailController implements IControllerInfo, Initializable {
         productVerhuurtAanLabel.setText(product.getVerhuurdAan().toString());
         productVerhuurtLabel.setText(String.format("%b", product.getOpVoorraad()));
         productVerhuurtDoorLabel.setText(product.getVerhuurdDoor().getNaam());
-
     }
 }
