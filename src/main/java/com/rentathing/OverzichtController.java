@@ -38,22 +38,23 @@ public class OverzichtController implements IControllerInfo, Initializable {
 
     @FXML
     void gaNaarDetailProduct(ActionEvent event) {
-        if (getProductFromTable() == null) {
+        if (getProductFromList() == null) {
             errorMessage.setVisible(true);
             return;
         }
+        System.out.println(getProductFromList());
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
 
         DetailController controller = new DetailController();
-        controller.setProduct(getProductFromTable());
+        controller.setProduct(getProductFromList());
         Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "detail-venster.fxml", controller);
 
         stage.setScene(scene);
     }
 
-    private Product getProductFromTable() {
-        return ProductFactory.createBoormachine("merk", "typ");
+    private Product getProductFromList() {
+        return productenList.getSelectionModel().getSelectedItem();
     }
 
     @Override
