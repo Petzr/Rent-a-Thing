@@ -30,6 +30,7 @@ public class Seeder {
         medewerkers.add(new Medewerker("Peter", "Petzr", "asdf"));
         medewerkers.add(new Medewerker("Karel", "Karel", "asdf"));
         medewerkers.add(new Medewerker("Daner", "Daner", "asdf"));
+        medewerkers.add(new Medewerker("Yorik", "Yorik", "asdf"));
     }
 
     public ArrayList<Product> getProducts () {
