@@ -3,7 +3,10 @@ package com.rentathing;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import source_code.Bedrijf;
 import source_code.people.Medewerker;
 import source_code.products.Product;
@@ -40,7 +43,11 @@ public class DetailController implements Initializable, IControllerInfo {
     }
     @FXML
     void previeusScene(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
 
+        Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "overzicht-venster.fxml", new OverzichtController());
+        stage.setScene(scene);
     }
 
     public void setProduct(Product product) {

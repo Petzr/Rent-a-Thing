@@ -54,7 +54,11 @@ public class OverzichtController implements IControllerInfo, Initializable {
     }
     @FXML
     void previeusScene(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
 
+        Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "menu-venster.fxml", new MenuController());
+        stage.setScene(scene);
     }
 
     private Product getProductFromList() {
