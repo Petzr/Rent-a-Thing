@@ -1,8 +1,9 @@
 package source_code.products;
 
 import java.util.Observable;
+import java.util.Observer;
 
-public abstract class Product extends Observable {
+public abstract class Product extends Observable implements Observer {
 
     private boolean opVoorraad;
 
@@ -38,8 +39,17 @@ public abstract class Product extends Observable {
 
     public abstract String korteOmschrijvingProduct();
 
-    private void updateObservers() {
-        setChanged();
-        notifyObservers();
+    @Override
+    public String toString() {
+        String line = String.format("%s, %s", getClass(), korteOmschrijvingProduct());
+        return line.substring(27);
+    }
+
+    @Override
+    public void update(Observable o, Object medewerker) {
+        opVoorraad = !opVoorraad;
+        if (medewerker instanceof Medewerker) {
+            setVerhuurdDoor((Medewerker) medewerker);
+        }
     }
 }
