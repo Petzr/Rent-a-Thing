@@ -10,7 +10,8 @@ public class Main {
         Bedrijf bedrijf = new Bedrijf(new Seeder());
 
         // een medewerker wordt bepaald door het inloggen bij het bedrijf
-        Medewerker medewerker = bedrijf.login("123", "123");
+        Medewerker medewerker = bedrijf.login("Karel", "asdf");
+        System.out.println(medewerker.getNaam() +" is ingelogd");
 
         // die medewerker huurt een product uit het bedrijf
         medewerker.addVerhuurdeProduct(bedrijf.getProducts().get(1));
@@ -18,6 +19,7 @@ public class Main {
 
         // en hier wordt per product van de medewerker de verhuurprijs berekent en laten zien
         for (Product product : medewerker.getVerhuurdeProducten()) {
+            System.out.println();
             System.out.println(product);
             System.out.println(product.getVerhuurPrijs(4, true));
         }
