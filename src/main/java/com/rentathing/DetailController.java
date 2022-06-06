@@ -28,9 +28,7 @@ public class DetailController implements Initializable, IControllerInfo {
     @FXML
     private Label productVerhuurtLabel;
     @FXML
-    private Label spec1Product;
-    @FXML
-    private Label spec2Product;
+    private Label specsProduct;
 
     @FXML
     void productHuren(ActionEvent event) {
@@ -61,9 +59,10 @@ public class DetailController implements Initializable, IControllerInfo {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        medewerkerLabel.setText(medewerker.getNaam());
-//
-//        productSoort.setText(product.getClass().toString());
+        medewerkerLabel.setText(medewerker.getNaam());
+
+        productSoort.setText(product.getClass().toString().substring(27));
+        specsProduct.setText(product.korteOmschrijvingProduct());
 //        productVerhuurtAanLabel.setText(product.getVerhuurdAan().toString());
 //        productVerhuurtLabel.setText(String.format("%b", product.getOpVoorraad()));
 //        productVerhuurtDoorLabel.setText(product.getVerhuurdDoor().getNaam());
