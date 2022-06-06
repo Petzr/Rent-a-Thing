@@ -42,7 +42,7 @@ public class DetailController implements Initializable, IControllerInfo {
 
     }
     @FXML
-    void previeusScene(ActionEvent event) {
+    void previousScene(ActionEvent event) {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
 
