@@ -36,9 +36,12 @@ public class DetailController implements Initializable, IControllerInfo {
     void productHuren(ActionEvent event) {
 
     }
-
     @FXML
     void productRetouren(ActionEvent event) {
+
+    }
+    @FXML
+    void previeusScene(ActionEvent event) {
 
     }
 
