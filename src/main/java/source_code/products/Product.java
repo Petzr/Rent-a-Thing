@@ -58,6 +58,12 @@ public abstract class Product extends Observable {
 
     public abstract String korteOmschrijvingProduct();
 
+    @Override
+    public String toString() {
+        String line = String.format("%s, %s", getClass(), korteOmschrijvingProduct());
+        return line.substring(27);
+    }
+
     private void updateObservers() {
         setChanged();
         notifyObservers();
