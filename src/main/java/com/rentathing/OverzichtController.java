@@ -52,6 +52,10 @@ public class OverzichtController implements IControllerInfo, Initializable {
 
         stage.setScene(scene);
     }
+    @FXML
+    void previeusScene(ActionEvent event) {
+
+    }
 
     private Product getProductFromList() {
         return productenList.getSelectionModel().getSelectedItem();

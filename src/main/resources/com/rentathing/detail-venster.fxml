@@ -74,6 +74,7 @@
                   <Label fx:id="productVerhuurtLabel" layoutX="204.0" layoutY="205.0" text="productVerhuurtLabel" />
                   <Label fx:id="productVerhuurtDoorLabel" layoutX="204.0" layoutY="234.0" text="productVerhuurtLabel" />
                   <Label fx:id="productVerhuurtAanLabel" layoutX="204.0" layoutY="259.0" text="productVerhuurtLabel" />
+                  <Button layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#previeusScene" text="&lt;" />
                </children>
             </AnchorPane>
          </center>
