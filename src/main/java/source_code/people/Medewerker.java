@@ -3,8 +3,9 @@ package source_code.people;
 import source_code.products.Product;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
-public class Medewerker {
+public class Medewerker extends Observable {
     private String naam;
     private String username;
     private String password;
@@ -33,7 +34,11 @@ public class Medewerker {
     }
 
     public void addVerhuurdeProduct(Product product) {
+        addObserver(product);
         this.verhuurdeProducten.add(product);
+
+        setChanged();
+        notifyObservers(this);
     }
 
     public boolean checkMedewerker(String username, String password) {

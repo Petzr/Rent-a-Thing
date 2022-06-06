@@ -4,8 +4,9 @@ import source_code.people.Medewerker;
 import source_code.people.Klant;
 
 import java.util.Observable;
+import java.util.Observer;
 
-public abstract class Product extends Observable {
+public abstract class Product extends Observable implements Observer {
 
     private boolean opVoorraad;
     private Medewerker verhuurdDoor;
@@ -64,8 +65,11 @@ public abstract class Product extends Observable {
         return line.substring(27);
     }
 
-    private void updateObservers() {
-        setChanged();
-        notifyObservers();
+    @Override
+    public void update(Observable o, Object medewerker) {
+        opVoorraad = !opVoorraad;
+        if (medewerker instanceof Medewerker) {
+            verhuurdDoor = (Medewerker) medewerker;
+        }
     }
 }
