@@ -23,7 +23,6 @@ public class Main {
             System.out.println(product);
             System.out.println(product.getVerhuurPrijs(4, true));
             System.out.println(product.getOpVoorraad());
-            System.out.println((product.getVerhuurdDoor()));
         }
     }
 

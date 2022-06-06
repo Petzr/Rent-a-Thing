@@ -1,5 +1,7 @@
 package source_code.products;
 
+import source_code.people.Medewerker;
+
 import java.util.Observable;
 import java.util.Observer;
 
@@ -48,8 +50,5 @@ public abstract class Product extends Observable implements Observer {
     @Override
     public void update(Observable o, Object medewerker) {
         opVoorraad = !opVoorraad;
-        if (medewerker instanceof Medewerker) {
-            setVerhuurdDoor((Medewerker) medewerker);
-        }
     }
 }
