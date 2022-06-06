@@ -53,7 +53,7 @@ public class OverzichtController implements IControllerInfo, Initializable {
         stage.setScene(scene);
     }
     @FXML
-    void previeusScene(ActionEvent event) {
+    void previousScene(ActionEvent event) {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
 
