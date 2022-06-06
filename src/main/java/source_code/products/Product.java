@@ -69,7 +69,7 @@ public abstract class Product extends Observable implements Observer {
     public void update(Observable o, Object medewerker) {
         opVoorraad = !opVoorraad;
         if (medewerker instanceof Medewerker) {
-            verhuurdDoor = (Medewerker) medewerker;
+            setVerhuurdDoor((Medewerker) medewerker);
         }
     }
 }
