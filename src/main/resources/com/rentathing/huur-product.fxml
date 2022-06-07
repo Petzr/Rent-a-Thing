@@ -69,7 +69,7 @@
                   <Label fx:id="productSoort" layoutX="96.0" layoutY="28.0" text="soortProduct" />
                   <Label fx:id="specsProduct" layoutX="402.0" layoutY="28.0" prefHeight="43.0" prefWidth="202.0" text="specs" />
                   <Button layoutX="526.0" layoutY="145.0" mnemonicParsing="false" onAction="#zekerProductHuren" text="Huren" />
-                  <Button layoutX="525.0" layoutY="253.0" mnemonicParsing="false" onAction="#bevestigHuren" text="Zeker?" />
+                  <Button fx:id="bevestigenButton" layoutX="525.0" layoutY="253.0" mnemonicParsing="false" onAction="#bevestigHuren" text="Zeker?" />
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="149.0" text="kosten met verzekering:" textAlignment="CENTER" />
                   <Label fx:id="productKostenPerDagLabel" layoutX="204.0" layoutY="119.0" text="kostenProduct" />
                   <Label fx:id="productenKostenMetVezekering" layoutX="204.0" layoutY="149.0" text="productVerhuurtLabel" />

@@ -5,10 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import source_code.Bedrijf;
 import source_code.people.Medewerker;
@@ -43,6 +40,8 @@ public class HurenController implements IControllerInfo, Initializable {
     private Label specsProduct;
     @FXML
     private Label totaalPrijsLabel;
+    @FXML
+    private Button bevestigenButton;
 
     @FXML
     void bevestigHuren(ActionEvent event) {
@@ -86,5 +85,9 @@ public class HurenController implements IControllerInfo, Initializable {
         productKostenPerDagLabel.setText(String.valueOf(product.getVerhuurPrijs(1, false)));
         productenKostenMetVezekering.setText(String.valueOf(product.getVerhuurPrijs(1, true)));
 
+        totaalPrijsLabel.setVisible(false);
+        bevestigenButton.setVisible(false);
+
+        aantalDagenS.setEditable(true);
     }
 }
