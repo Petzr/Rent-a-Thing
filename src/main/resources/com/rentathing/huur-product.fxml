@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <BorderPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <top>
+        <Label fx:id="medewerkerLabel" text="medewerker" textAlignment="CENTER" BorderPane.alignment="CENTER">
+          <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </BorderPane.margin>
+        </Label>
+      </top>
+         <center>
+            <AnchorPane prefHeight="155.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="productSoort" layoutX="96.0" layoutY="28.0" text="soortProduct" />
+                  <Label fx:id="specsProduct" layoutX="402.0" layoutY="28.0" prefHeight="43.0" prefWidth="202.0" text="specs" />
+                  <Button layoutX="526.0" layoutY="145.0" mnemonicParsing="false" onAction="#zekerProductHuren" text="Huren" />
+                  <Button layoutX="525.0" layoutY="253.0" mnemonicParsing="false" onAction="#bevestigHuren" text="Zeker?" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="149.0" text="kosten met verzekering:" textAlignment="CENTER" />
+                  <Label fx:id="productKostenPerDagLabel" layoutX="204.0" layoutY="119.0" text="kostenProduct" />
+                  <Label fx:id="productenKostenMetVezekering" layoutX="204.0" layoutY="149.0" text="productVerhuurtLabel" />
+                  <Button layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#previousScene" text="&lt;" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="119.0" text="kosten per dag:" textAlignment="CENTER" />
+                  <CheckBox fx:id="isVerzekerdCB" layoutX="54.0" layoutY="193.0" mnemonicParsing="false" text="Verzekerd" />
+                  <Spinner fx:id="aantalDagenS" layoutX="55.0" layoutY="233.0" prefHeight="26.0" prefWidth="82.0" />
+                  <TextField fx:id="klantVoornaamTF" layoutX="288.0" layoutY="189.0" />
+                  <TextField fx:id="klantAchternaamTF" layoutX="289.0" layoutY="234.0" />
+                  <Label layoutX="211.0" layoutY="193.0" text="klant naam:" />
+                  <Label layoutX="182.0" layoutY="237.0" text="klant achernaam:" />
+                  <Label fx:id="totaalPrijsLabel" contentDisplay="CENTER" layoutX="510.0" layoutY="206.0" text="totaalPrijsLabel" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+         </center>
+    </BorderPane>
+  </children>
+</VBox>
