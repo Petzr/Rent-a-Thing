@@ -21,7 +21,7 @@ public class HurenController implements IControllerInfo, Initializable {
     private Product product;
 
     @FXML
-    private Spinner<?> aantalDagenS;
+    private Spinner<Integer> aantalDagenS;
     @FXML
     private CheckBox isVerzekerdCB;
     @FXML
@@ -44,11 +44,6 @@ public class HurenController implements IControllerInfo, Initializable {
     private Button bevestigenButton;
 
     @FXML
-    void bevestigHuren(ActionEvent event) {
-
-    }
-
-    @FXML
     void previousScene(ActionEvent event) {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -60,8 +55,13 @@ public class HurenController implements IControllerInfo, Initializable {
     }
 
     @FXML
-    void zekerProductHuren(ActionEvent event) {
+    void bevestigHuren(ActionEvent event) {
 
+    }
+
+    @FXML
+    void zekerProductHuren(ActionEvent event) {
+        System.out.println(aantalDagenS.getValue());
     }
 
     public void setProduct(Product product) {
@@ -89,5 +89,6 @@ public class HurenController implements IControllerInfo, Initializable {
         bevestigenButton.setVisible(false);
 
         aantalDagenS.setEditable(true);
+        aantalDagenS.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 365, 1));
     }
 }
