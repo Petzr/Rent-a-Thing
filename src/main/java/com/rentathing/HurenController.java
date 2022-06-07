@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import source_code.Bedrijf;
+import source_code.people.Klant;
 import source_code.people.Medewerker;
 import source_code.products.Product;
 
@@ -56,11 +57,19 @@ public class HurenController implements IControllerInfo, Initializable {
 
     @FXML
     void bevestigHuren(ActionEvent event) {
+        product.setVerhuurdDoor(medewerker);
+        Klant klant = new Klant(klantVoornaamTF.getText(), klantAchternaamTF.getText());
+        product.setVerhuurdAan(klant);
 
+        product.setOpVoorraad(false);
+
+        previousScene(event);
     }
 
     @FXML
     void zekerProductHuren(ActionEvent event) {
+        if (klantVoornaamTF.getText().equals("") || klantAchternaamTF.getText().equals("")) return;
+
         totaalPrijsLabel.setVisible(true);
         bevestigenButton.setVisible(true);
         totaalPrijsLabel.setText(String.valueOf(product.getVerhuurPrijs(aantalDagenS.getValue(),isVerzekerdCB.isSelected())));

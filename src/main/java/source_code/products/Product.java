@@ -36,6 +36,10 @@ public abstract class Product extends Observable {
         this.verhuurdAan = verhuurdAan;
     }
 
+    public void setOpVoorraad(boolean opVoorraad) {
+        this.opVoorraad = opVoorraad;
+    }
+
     public boolean getOpVoorraad() {
         return opVoorraad;
     }
