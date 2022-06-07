@@ -61,7 +61,9 @@ public class HurenController implements IControllerInfo, Initializable {
 
     @FXML
     void zekerProductHuren(ActionEvent event) {
-        System.out.println(aantalDagenS.getValue());
+        totaalPrijsLabel.setVisible(true);
+        bevestigenButton.setVisible(true);
+        totaalPrijsLabel.setText(String.valueOf(product.getVerhuurPrijs(aantalDagenS.getValue(),isVerzekerdCB.isSelected())));
     }
 
     public void setProduct(Product product) {
