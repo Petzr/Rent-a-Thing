@@ -1,13 +1,15 @@
 package source_code.products;
 
 import source_code.people.Medewerker;
+import source_code.people.Klant;
 
 import java.util.Observable;
-import java.util.Observer;
 
-public abstract class Product extends Observable implements Observer {
+public abstract class Product extends Observable {
 
     private boolean opVoorraad;
+    private Medewerker verhuurdDoor;
+    private Klant verhuurdAan;
 
     private double verhuurPrijs;
     private double verzekeringPrijs;
@@ -18,6 +20,25 @@ public abstract class Product extends Observable implements Observer {
         this.verzekeringPrijs = verzekeringPrijs;
     }
 
+
+    public Medewerker getVerhuurdDoor() {
+        return verhuurdDoor;
+    }
+    public Klant getVerhuurdAan() {
+        return verhuurdAan;
+    }
+
+    public void setVerhuurdDoor(Medewerker verhuurdDoor) {
+        this.verhuurdDoor = verhuurdDoor;
+    }
+
+    public void setVerhuurdAan(Klant verhuurdAan) {
+        this.verhuurdAan = verhuurdAan;
+    }
+
+    public void setOpVoorraad(boolean opVoorraad) {
+        this.opVoorraad = opVoorraad;
+    }
 
     public boolean getOpVoorraad() {
         return opVoorraad;
@@ -48,8 +69,8 @@ public abstract class Product extends Observable implements Observer {
         return line.substring(27);
     }
 
-    @Override
-    public void update(Observable o, Object medewerker) {
-        opVoorraad = !opVoorraad;
+    private void updateObservers() {
+        setChanged();
+        notifyObservers();
     }
 }
