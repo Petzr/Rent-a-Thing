@@ -39,7 +39,7 @@ public class DetailController implements Initializable, IControllerInfo {
     }
     @FXML
     void productRetouren(ActionEvent event) {
-
+        productVerhuurtLabel.setText(product.retourProduct() ? "op voorraad" : "niet op voorraad");
     }
     @FXML
     void previousScene(ActionEvent event) {
@@ -70,8 +70,9 @@ public class DetailController implements Initializable, IControllerInfo {
 
         productSoort.setText(product.getClass().toString().substring(27));
         specsProduct.setText(product.korteOmschrijvingProduct());
-//        productVerhuurtAanLabel.setText(product.getVerhuurdAan().toString());
-//        productVerhuurtLabel.setText(String.format("%b", product.getOpVoorraad()));
-//        productVerhuurtDoorLabel.setText(product.getVerhuurdDoor().getNaam());
+
+        productVerhuurtLabel.setText(product.getOpVoorraad() ? "op voorraad" : "niet op voorraad");
+        productVerhuurtAanLabel.setText(product.getVerhuurdAan() != null ? product.getVerhuurdAan().toString() : "geen");
+        productVerhuurtDoorLabel.setText(product.getVerhuurdDoor() != null ? product.getVerhuurdDoor().getNaam() : "geen");
     }
 }
