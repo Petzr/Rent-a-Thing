@@ -77,6 +77,8 @@ public class OverzichtController implements IControllerInfo, Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        medewerkerLabel.setText(medewerker.getNaam());
+
         for (Product product : bedrijf.getProducts()) productenList.getItems().add(product);
 
         errorMessage.setVisible(false);

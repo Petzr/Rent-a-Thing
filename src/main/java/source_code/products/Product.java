@@ -52,8 +52,9 @@ public abstract class Product extends Observable {
         return verzekeringPrijs * aantalDagen;
     }
 
-    public void retourProduct() {
+    public boolean retourProduct() {
         opVoorraad = true;
+        return opVoorraad;
     }
 
     public abstract String korteOmschrijvingProduct();
