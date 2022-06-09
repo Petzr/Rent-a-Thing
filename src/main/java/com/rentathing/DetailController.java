@@ -12,9 +12,11 @@ import source_code.people.Medewerker;
 import source_code.products.Product;
 
 import java.net.URL;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.ResourceBundle;
 
-public class DetailController implements Initializable, IControllerInfo {
+public class DetailController implements Initializable, IControllerInfo, Observer {
 
     private Product product;
     private Bedrijf bedrijf;
@@ -45,8 +47,6 @@ public class DetailController implements Initializable, IControllerInfo {
     }
     @FXML
     void productRetouren(ActionEvent event) {
-        product.setVerhuurdDoor(null);
-        product.setVerhuurdAan(null);
         product.retourProduct();
         setLabels();
     }
@@ -75,6 +75,7 @@ public class DetailController implements Initializable, IControllerInfo {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        product.addObserverToProduct(this);
         medewerkerLabel.setText(medewerker.getNaam());
 
         productSoort.setText(product.getClass().toString().substring(27));
@@ -87,5 +88,10 @@ public class DetailController implements Initializable, IControllerInfo {
         productVerhuurtAanLabel.setText(product.getVerhuurdAan() != null ? product.getVerhuurdAan().toString() : "geen");
         productVerhuurtDoorLabel.setText(product.getVerhuurdDoor() != null ? product.getVerhuurdDoor().getNaam() : "geen");
 
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        setLabels();
     }
 }

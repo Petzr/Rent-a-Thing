@@ -4,6 +4,7 @@ import source_code.people.Medewerker;
 import source_code.people.Klant;
 
 import java.util.Observable;
+import java.util.Observer;
 
 public abstract class Product extends Observable {
 
@@ -36,8 +37,10 @@ public abstract class Product extends Observable {
         this.verhuurdAan = verhuurdAan;
     }
 
-    public void setOpVoorraad(boolean opVoorraad) {
+    public boolean setOpVoorraad(boolean opVoorraad) {
         this.opVoorraad = opVoorraad;
+        updateObservers();
+        return opVoorraad;
     }
 
     public boolean getOpVoorraad() {
@@ -57,8 +60,9 @@ public abstract class Product extends Observable {
     }
 
     public boolean retourProduct() {
-        opVoorraad = true;
-        return opVoorraad;
+        setVerhuurdAan(null);
+        setVerhuurdDoor(null);
+        return setOpVoorraad(true);
     }
 
     public abstract String korteOmschrijvingProduct();
@@ -67,6 +71,10 @@ public abstract class Product extends Observable {
     public String toString() {
         String line = String.format("%s, %s", getClass(), korteOmschrijvingProduct());
         return line.substring(27);
+    }
+
+    public void addObserverToProduct(Observer o) {
+        addObserver(o);
     }
 
     private void updateObservers() {
