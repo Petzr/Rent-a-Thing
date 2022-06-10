@@ -43,18 +43,13 @@ public class OverzichtController implements IControllerInfo, Initializable {
             return;
         }
         System.out.println(getProductFromList());
-        Stage stage = IControllerInfo.getStage(event);
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
 
         DetailController controller = new DetailController();
         controller.setProduct(getProductFromList());
         Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "detail-venster.fxml", controller);
 
-        stage.setScene(scene);
-    }
-    @FXML
-    void previousScene(ActionEvent event) {
-        Stage stage = IControllerInfo.getStage(event);
-        Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "menu-venster.fxml", new MenuController());
         stage.setScene(scene);
     }
 
@@ -74,8 +69,6 @@ public class OverzichtController implements IControllerInfo, Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        medewerkerLabel.setText(medewerker.getNaam());
-
         for (Product product : bedrijf.getProducts()) productenList.getItems().add(product);
 
         errorMessage.setVisible(false);

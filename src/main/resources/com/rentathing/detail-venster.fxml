@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" >
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -64,7 +64,8 @@
             <AnchorPane prefHeight="155.0" prefWidth="640.0" BorderPane.alignment="CENTER">
                <children>
                   <Label fx:id="productSoort" layoutX="96.0" layoutY="67.0" text="soortProduct" />
-                  <Label fx:id="specsProduct" layoutX="425.0" layoutY="54.0" prefHeight="43.0" prefWidth="202.0" text="specs" />
+                  <Label fx:id="spec1Product" layoutX="467.0" layoutY="59.0" text="spec1" />
+                  <Label fx:id="spec2Product" layoutX="467.0" layoutY="96.0" text="spec2" />
                   <Label layoutX="98.0" layoutY="205.0" text="Is verhuurd: " />
                   <Button layoutX="418.0" layoutY="201.0" mnemonicParsing="false" onAction="#productHuren" text="Huren" />
                   <Button layoutX="540.0" layoutY="201.0" mnemonicParsing="false" onAction="#productRetouren" text="Retouren" />
@@ -73,7 +74,6 @@
                   <Label fx:id="productVerhuurtLabel" layoutX="204.0" layoutY="205.0" text="productVerhuurtLabel" />
                   <Label fx:id="productVerhuurtDoorLabel" layoutX="204.0" layoutY="234.0" text="productVerhuurtLabel" />
                   <Label fx:id="productVerhuurtAanLabel" layoutX="204.0" layoutY="259.0" text="productVerhuurtLabel" />
-                  <Button layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#previousScene" text="&lt;" />
                </children>
             </AnchorPane>
          </center>
