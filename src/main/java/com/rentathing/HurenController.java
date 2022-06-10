@@ -46,8 +46,7 @@ public class HurenController implements IControllerInfo, Initializable {
 
     @FXML
     void previousScene(ActionEvent event) {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
+        Stage stage = IControllerInfo.getStage(event);
 
         DetailController controller = new DetailController();
         controller.setProduct(product);

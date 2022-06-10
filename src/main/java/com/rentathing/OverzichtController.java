@@ -43,8 +43,7 @@ public class OverzichtController implements IControllerInfo, Initializable {
             return;
         }
         System.out.println(getProductFromList());
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
+        Stage stage = IControllerInfo.getStage(event);
 
         DetailController controller = new DetailController();
         controller.setProduct(getProductFromList());
@@ -54,9 +53,7 @@ public class OverzichtController implements IControllerInfo, Initializable {
     }
     @FXML
     void previousScene(ActionEvent event) {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-
+        Stage stage = IControllerInfo.getStage(event);
         Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "menu-venster.fxml", new MenuController());
         stage.setScene(scene);
     }
