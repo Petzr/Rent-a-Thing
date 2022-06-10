@@ -1,33 +1,27 @@
 package com.rentathing;
 
-import com.rentathing.IControllerInfo;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import source_code.Bedrijf;
 import source_code.people.Medewerker;
+import source_code.products.Boormachine;
+import source_code.products.PersonenAuto;
 import source_code.products.Product;
 import source_code.products.Vrachtwagen;
-import source_code.products.factory.ProductFactory;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class OverzichtController implements IControllerInfo, Initializable {
+public class BeheerController implements IControllerInfo, Initializable {
 
-    private Bedrijf bedrijf;
     private Medewerker medewerker;
+    private Bedrijf bedrijf;
 
     @FXML
     private Label errorMessage;
@@ -37,17 +31,16 @@ public class OverzichtController implements IControllerInfo, Initializable {
     private ListView<Product> productenList;
 
     @FXML
-    void gaNaarDetailProduct(ActionEvent event) {
+    void gaNaarToevoegenProduct(ActionEvent event) {
         if (getProductFromList() == null) {
             errorMessage.setVisible(true);
             return;
         }
-        System.out.println(getProductFromList());
         Stage stage = IControllerInfo.getStage(event);
 
-        DetailController controller = new DetailController();
+        ToevoegenController controller = new ToevoegenController();
         controller.setProduct(getProductFromList());
-        Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "detail-venster.fxml", controller);
+        Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "toevoegen-venster.fxml", controller);
 
         stage.setScene(scene);
     }
@@ -62,6 +55,7 @@ public class OverzichtController implements IControllerInfo, Initializable {
         return productenList.getSelectionModel().getSelectedItem();
     }
 
+
     @Override
     public void setMedewerker(Medewerker medewerker) {
         this.medewerker = medewerker;
@@ -75,9 +69,6 @@ public class OverzichtController implements IControllerInfo, Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         medewerkerLabel.setText(medewerker.getNaam());
-
-        for (Product product : bedrijf.getProducts()) productenList.getItems().add(product);
-
         errorMessage.setVisible(false);
     }
 }

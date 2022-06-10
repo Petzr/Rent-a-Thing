@@ -2,11 +2,14 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
@@ -63,17 +66,22 @@
          <center>
             <AnchorPane prefHeight="155.0" prefWidth="640.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="productSoort" layoutX="96.0" layoutY="67.0" text="soortProduct" />
-                  <Label fx:id="specsProduct" layoutX="425.0" layoutY="54.0" prefHeight="43.0" prefWidth="202.0" text="specs" />
-                  <Label layoutX="98.0" layoutY="205.0" text="Is verhuurd: " />
-                  <Button layoutX="418.0" layoutY="201.0" mnemonicParsing="false" onAction="#productHuren" text="Huren" />
-                  <Button layoutX="540.0" layoutY="201.0" mnemonicParsing="false" onAction="#productRetouren" text="Retouren" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="234.0" text="Product verhuurd door:" textAlignment="CENTER" />
-                  <Label layoutX="44.0" layoutY="259.0" text="Product verhuurd aan:" />
-                  <Label fx:id="productVerhuurtLabel" layoutX="204.0" layoutY="205.0" text="productVerhuurtLabel" />
-                  <Label fx:id="productVerhuurtDoorLabel" layoutX="204.0" layoutY="234.0" text="productVerhuurtLabel" />
-                  <Label fx:id="productVerhuurtAanLabel" layoutX="204.0" layoutY="259.0" text="productVerhuurtLabel" />
+                  <Label fx:id="productSoort" layoutX="96.0" layoutY="28.0" text="soortProduct" />
+                  <Label fx:id="specsProduct" layoutX="402.0" layoutY="28.0" prefHeight="43.0" prefWidth="202.0" text="specs" />
+                  <Button layoutX="526.0" layoutY="145.0" mnemonicParsing="false" onAction="#zekerProductHuren" text="Huren" />
+                  <Button fx:id="bevestigenButton" layoutX="525.0" layoutY="253.0" mnemonicParsing="false" onAction="#bevestigHuren" text="Zeker?" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="149.0" text="kosten met verzekering:" textAlignment="CENTER" />
+                  <Label fx:id="productKostenPerDagLabel" layoutX="204.0" layoutY="119.0" text="kostenProduct" />
+                  <Label fx:id="productenKostenMetVezekering" layoutX="204.0" layoutY="149.0" text="productVerhuurtLabel" />
                   <Button layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#previousScene" text="&lt;" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="119.0" text="kosten per dag:" textAlignment="CENTER" />
+                  <CheckBox fx:id="isVerzekerdCB" layoutX="54.0" layoutY="193.0" mnemonicParsing="false" text="Verzekerd" />
+                  <Spinner fx:id="aantalDagenS" layoutX="55.0" layoutY="233.0" prefHeight="26.0" prefWidth="82.0" />
+                  <TextField fx:id="klantVoornaamTF" layoutX="288.0" layoutY="189.0" />
+                  <TextField fx:id="klantAchternaamTF" layoutX="289.0" layoutY="234.0" />
+                  <Label layoutX="211.0" layoutY="193.0" text="klant naam:" />
+                  <Label layoutX="182.0" layoutY="237.0" text="klant achernaam:" />
+                  <Label fx:id="totaalPrijsLabel" contentDisplay="CENTER" layoutX="510.0" layoutY="206.0" text="totaalPrijsLabel" textAlignment="CENTER" />
                </children>
             </AnchorPane>
          </center>

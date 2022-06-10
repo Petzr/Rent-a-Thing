@@ -37,6 +37,12 @@ public abstract class Product extends Observable implements Observer {
         this.verhuurdAan = verhuurdAan;
     }
 
+    public boolean setOpVoorraad(boolean opVoorraad) {
+        this.opVoorraad = opVoorraad;
+        updateObservers();
+        return opVoorraad;
+    }
+
     public boolean getOpVoorraad() {
         return opVoorraad;
     }
@@ -53,8 +59,10 @@ public abstract class Product extends Observable implements Observer {
         return verzekeringPrijs * aantalDagen;
     }
 
-    public void retourProduct() {
-        opVoorraad = true;
+    public boolean retourProduct() {
+        setVerhuurdAan(null);
+        setVerhuurdDoor(null);
+        return setOpVoorraad(true);
     }
 
     public abstract String korteOmschrijvingProduct();
@@ -65,11 +73,12 @@ public abstract class Product extends Observable implements Observer {
         return line.substring(27);
     }
 
-    @Override
-    public void update(Observable o, Object medewerker) {
-        opVoorraad = !opVoorraad;
-        if (medewerker instanceof Medewerker) {
-            setVerhuurdDoor((Medewerker) medewerker);
-        }
+    public void addObserverToProduct(Observer o) {
+        addObserver(o);
+    }
+    private void updateObservers() {
+        setChanged();
+        notifyObservers();
+
     }
 }
