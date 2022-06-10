@@ -70,5 +70,11 @@ public class BeheerController implements IControllerInfo, Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         medewerkerLabel.setText(medewerker.getNaam());
         errorMessage.setVisible(false);
+
+        productenList.setItems(FXCollections.observableArrayList(
+                new Boormachine(null, null),
+                new PersonenAuto(null, 1),
+                new Vrachtwagen(1, 1)
+        ));
     }
 }
