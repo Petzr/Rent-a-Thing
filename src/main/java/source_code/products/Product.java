@@ -6,7 +6,7 @@ import source_code.people.Klant;
 import java.util.Observable;
 import java.util.Observer;
 
-public abstract class Product extends Observable implements Observer {
+public abstract class Product extends Observable {
 
     private boolean opVoorraad;
     private Medewerker verhuurdDoor;

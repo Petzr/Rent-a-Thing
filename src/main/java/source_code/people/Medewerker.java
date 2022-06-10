@@ -5,7 +5,7 @@ import source_code.products.Product;
 import java.util.ArrayList;
 import java.util.Observable;
 
-public class Medewerker extends Observable {
+public class Medewerker {
     private String naam;
     private String username;
     private String password;
@@ -34,11 +34,8 @@ public class Medewerker extends Observable {
     }
 
     public void addVerhuurdeProduct(Product product) {
-        addObserver(product);
         this.verhuurdeProducten.add(product);
 
-        setChanged();
-        notifyObservers(this);
     }
 
     public boolean checkMedewerker(String username, String password) {
