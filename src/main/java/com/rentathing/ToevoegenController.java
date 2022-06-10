@@ -3,8 +3,10 @@ package com.rentathing;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import source_code.Bedrijf;
 import source_code.people.Medewerker;
 import source_code.products.Product;
@@ -35,7 +37,9 @@ public class ToevoegenController implements IControllerInfo, Initializable {
     }
     @FXML
     void previousScene(ActionEvent event) {
-
+        Stage stage = IControllerInfo.getStage(event);
+        Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "beheer-venster.fxml", new BeheerController());
+        stage.setScene(scene);
     }
 
     public void setProduct(Product product) {
