@@ -76,7 +76,6 @@ public abstract class Product extends Observable {
     public void addObserverToProduct(Observer o) {
         addObserver(o);
     }
-
     private void updateObservers() {
         setChanged();
         notifyObservers();
