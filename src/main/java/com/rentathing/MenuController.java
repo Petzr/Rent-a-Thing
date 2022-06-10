@@ -23,11 +23,15 @@ public class MenuController implements IControllerInfo, Initializable {
     public Label medewerkerLabel;
 
     public void gaNaarBeheren(ActionEvent actionEvent) {
+        Stage stage = IControllerInfo.getStage(actionEvent);
+
+        Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "beheer-venster.fxml", new BeheerController());
+
+        stage.setScene(scene);
     }
 
     public void gaNaarOverzicht(ActionEvent actionEvent) {
-        Node node = (Node) actionEvent.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
+        Stage stage = IControllerInfo.getStage(actionEvent);
 
         Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "overzicht-venster.fxml", new OverzichtController());
 
@@ -35,9 +39,7 @@ public class MenuController implements IControllerInfo, Initializable {
     }
 
     public void uitloggen(ActionEvent actionEvent) {
-        Node node = (Node) actionEvent.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-
+        Stage stage = IControllerInfo.getStage(actionEvent);
         stage.close();
     }
 

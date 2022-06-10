@@ -1,7 +1,10 @@
 package com.rentathing;
 
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 import source_code.Bedrijf;
 import source_code.people.Medewerker;
 
@@ -11,6 +14,11 @@ public interface IControllerInfo {
 
     void setMedewerker(Medewerker medewerker);
     void setBedrijf(Bedrijf bedrijf);
+
+    static Stage getStage(Event event) {
+        Node node = (Node) event.getSource();
+        return (Stage) node.getScene().getWindow();
+    }
 
     static Scene createScene(Bedrijf bedrijf, Medewerker medewerker, String fxmlFile, IControllerInfo controller) {
         // fxml file

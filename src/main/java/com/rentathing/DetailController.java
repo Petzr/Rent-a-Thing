@@ -37,8 +37,7 @@ public class DetailController implements Initializable, IControllerInfo, Observe
 
     @FXML
     void productHuren(ActionEvent event) {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
+        Stage stage = IControllerInfo.getStage(event);
 
         HurenController controller = new HurenController();
         controller.setProduct(product);
@@ -52,8 +51,7 @@ public class DetailController implements Initializable, IControllerInfo, Observe
     }
     @FXML
     void previousScene(ActionEvent event) {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
+        Stage stage = IControllerInfo.getStage(event);
 
         Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "overzicht-venster.fxml", new OverzichtController());
         stage.setScene(scene);
