@@ -53,5 +53,6 @@ public class ToevoegenController implements IControllerInfo, Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         medewerkerLabel.setText(medewerker.getNaam());
+        specsProduct.setText(product.korteOmschrijvingProduct());
     }
 }
