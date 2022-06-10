@@ -1,5 +1,6 @@
 package com.rentathing;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,7 +10,10 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import source_code.Bedrijf;
 import source_code.people.Medewerker;
+import source_code.products.Boormachine;
+import source_code.products.PersonenAuto;
 import source_code.products.Product;
+import source_code.products.Vrachtwagen;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -64,6 +68,7 @@ public class BeheerController implements IControllerInfo, Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        medewerkerLabel.setText(medewerker.getNaam());
+        errorMessage.setVisible(false);
     }
 }
