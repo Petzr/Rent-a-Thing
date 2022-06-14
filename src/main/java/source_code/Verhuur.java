@@ -35,4 +35,8 @@ public class Verhuur extends Observable {
     public double verzekeringPrijs(int aantaldagen) {
         return verhuurdProduct.getVerzekeringPrijs(aantaldagen);
     }
+
+    public boolean retourProduct(){
+        verhuurdProduct.setOpVoorraad(true);
+    }
 }
