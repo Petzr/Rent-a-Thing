@@ -43,11 +43,6 @@ public abstract class Product extends Observable {
     public double getVerzekeringPrijs(int aantalDagen) {
         return verzekeringPrijs * aantalDagen;
     }
-
-    public boolean isOpVoorraad() {
-        return opVoorraad;
-    }
-
     public Verhuur getVerhuur() {
         return verhuur;
     }
