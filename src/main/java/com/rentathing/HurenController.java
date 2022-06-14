@@ -58,7 +58,8 @@ public class HurenController implements IControllerInfo, Initializable {
     @FXML
     void bevestigHuren(ActionEvent event) {
         Klant klant = new Klant(klantVoornaamTF.getText(), klantAchternaamTF.getText());
-        product.huurProduct(medewerker, klant);
+        Verhuur verhuur = product.huurProduct(medewerker, klant);
+        verhuur.huurProduct();
 
         previousScene(event);
     }

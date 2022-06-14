@@ -83,11 +83,17 @@ public class DetailController implements Initializable, IControllerInfo, Observe
     }
 
     private void setLabels() {
-        Verhuur verhuur = product.getVerhuur();
-        productVerhuurtLabel.setText(product.getOpVoorraad() ? "op voorraad" : "niet op voorraad");
-        productVerhuurtAanLabel.setText(verhuur.getVerhuurdAan() != null ? verhuur.getVerhuurdAan().toString() : "geen");
-        productVerhuurtDoorLabel.setText(verhuur.getVerhuurdDoor() != null ? verhuur.getVerhuurdDoor().getNaam() : "geen");
+        try {
+            Verhuur verhuur = product.getVerhuur();
+            productVerhuurtLabel.setText(product.getOpVoorraad() ? "op voorraad" : "niet op voorraad");
+            productVerhuurtAanLabel.setText(verhuur.getVerhuurdAan() != null ? verhuur.getVerhuurdAan().toString() : "geen");
+            productVerhuurtDoorLabel.setText(verhuur.getVerhuurdDoor() != null ? verhuur.getVerhuurdDoor().getNaam() : "geen");
+        } catch (Exception e) {
+            productVerhuurtLabel.setText(product.getOpVoorraad() ? "op voorraad" : "niet op voorraad");
+            productVerhuurtAanLabel.setText("geen");
+            productVerhuurtDoorLabel.setText("geen");
 
+        }
     }
 
     @Override
