@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import source_code.Bedrijf;
+import source_code.Verhuur;
 import source_code.people.Medewerker;
 import source_code.products.Product;
 
@@ -46,7 +47,7 @@ public class DetailController implements Initializable, IControllerInfo, Observe
     }
     @FXML
     void productRetouren(ActionEvent event) {
-        product.retourProduct();
+        product.getVerhuur().retourProduct();
         setLabels();
     }
     @FXML
@@ -82,9 +83,10 @@ public class DetailController implements Initializable, IControllerInfo, Observe
     }
 
     private void setLabels() {
+        Verhuur verhuur = product.getVerhuur();
         productVerhuurtLabel.setText(product.getOpVoorraad() ? "op voorraad" : "niet op voorraad");
-        productVerhuurtAanLabel.setText(product.getVerhuurdAan() != null ? product.getVerhuurdAan().toString() : "geen");
-        productVerhuurtDoorLabel.setText(product.getVerhuurdDoor() != null ? product.getVerhuurdDoor().getNaam() : "geen");
+        productVerhuurtAanLabel.setText(verhuur.getVerhuurdAan() != null ? verhuur.getVerhuurdAan().toString() : "geen");
+        productVerhuurtDoorLabel.setText(verhuur.getVerhuurdDoor() != null ? verhuur.getVerhuurdDoor().getNaam() : "geen");
 
     }
 

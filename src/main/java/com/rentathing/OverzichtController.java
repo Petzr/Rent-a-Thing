@@ -43,12 +43,11 @@ public class OverzichtController implements IControllerInfo, Initializable {
             return;
         }
         System.out.println(getProductFromList());
-        Stage stage = IControllerInfo.getStage(event);
 
+        Stage stage = IControllerInfo.getStage(event);
         DetailController controller = new DetailController();
         controller.setProduct(getProductFromList());
         Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "detail-venster.fxml", controller);
-
         stage.setScene(scene);
     }
     @FXML

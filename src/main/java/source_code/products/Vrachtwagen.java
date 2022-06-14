@@ -1,6 +1,6 @@
 package source_code.products;
 
-public class Vrachtwagen extends Product{
+public class Vrachtwagen extends Product {
 
     private double laadVermogenInKG;
     private double gewichtInKG;

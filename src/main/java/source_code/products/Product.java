@@ -1,5 +1,6 @@
 package source_code.products;
 
+import source_code.Verhuur;
 import source_code.people.Klant;
 import source_code.people.Medewerker;
 
@@ -9,32 +10,16 @@ import java.util.Observer;
 public abstract class Product extends Observable {
 
     private boolean opVoorraad;
-    private Medewerker verhuurdDoor;
-    private Klant verhuurdAan;
+    private Verhuur verhuur;
 
-    private double verhuurPrijs;
-    private double verzekeringPrijs;
+    private final double verhuurPrijs;
+    private final double verzekeringPrijs;
 
     public Product(double verhuurPrijs, double verzekeringPrijs) {
         this.opVoorraad = true;
         this.verhuurPrijs = verhuurPrijs;
         this.verzekeringPrijs = verzekeringPrijs;
-    }
-
-
-    public Medewerker getVerhuurdDoor() {
-        return verhuurdDoor;
-    }
-    public Klant getVerhuurdAan() {
-        return verhuurdAan;
-    }
-
-    public void setVerhuurdDoor(Medewerker verhuurdDoor) {
-        this.verhuurdDoor = verhuurdDoor;
-    }
-
-    public void setVerhuurdAan(Klant verhuurdAan) {
-        this.verhuurdAan = verhuurdAan;
+        verhuur = new Verhuur(this, null, null);
     }
 
     public boolean setOpVoorraad(boolean opVoorraad) {
@@ -58,11 +43,15 @@ public abstract class Product extends Observable {
     public double getVerzekeringPrijs(int aantalDagen) {
         return verzekeringPrijs * aantalDagen;
     }
+    public Verhuur getVerhuur() {
+        return verhuur;
+    }
 
-    public boolean retourProduct() {
-        setVerhuurdAan(null);
-        setVerhuurdDoor(null);
-        return setOpVoorraad(true);
+    public Verhuur huurProduct(Medewerker verhuurdDoor, Klant verhuurdAan) {
+        if (verhuur != null) {
+            verhuur = new Verhuur(this, verhuurdDoor, verhuurdAan);
+            return verhuur;
+        } else return verhuur;
     }
 
     public abstract String korteOmschrijvingProduct();

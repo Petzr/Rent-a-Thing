@@ -34,13 +34,15 @@ public class LoginController implements Initializable {
             return;
         }
         errorMessage.setVisible(false);
+        createNewMedewerkerMenuScherm(medewerker);
+    }
 
+    private void createNewMedewerkerMenuScherm(Medewerker medewerker) {
         Stage stage = new Stage();
         Scene scene = IControllerInfo.createScene(bedrijf, medewerker, "menu-venster.fxml", new MenuController());
         stage.setTitle(medewerker.getNaam());
         stage.setScene(scene);
         stage.show();
-
     }
 
     @Override

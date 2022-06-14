@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class Bedrijf {
 
-    private ArrayList<Product> products;
-    private ArrayList<Medewerker> medewerkers;
+    private final ArrayList<Product> products;
+    private final ArrayList<Medewerker> medewerkers;
 
     public Bedrijf(Seeder seeder) {
         products = seeder.getProducts();

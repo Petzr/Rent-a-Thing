@@ -73,8 +73,8 @@ public class BeheerController implements IControllerInfo, Initializable {
 
         productenList.setItems(FXCollections.observableArrayList(
                 new Boormachine(null, null),
-                new PersonenAuto(null, 1),
-                new Vrachtwagen(1, 1)
+                new PersonenAuto(null, 0),
+                new Vrachtwagen(0, 0)
         ));
     }
 }
