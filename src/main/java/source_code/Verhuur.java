@@ -16,6 +16,8 @@ public class Verhuur extends Observable {
         this.verhuurdProduct = verhuurdProduct;
         this.verhuurdDoor = verhuurdDoor;
         this.verhuurdAan = verhuurdAan;
+
+        verhuurdProduct.setOpVoorraad(false);
     }
 
     public Medewerker getVerhuurdDoor() {
@@ -36,7 +38,9 @@ public class Verhuur extends Observable {
         return verhuurdProduct.getVerzekeringPrijs(aantaldagen);
     }
 
-    public boolean retourProduct(){
+    public void retourProduct() {
+        verhuurdAan = null;
+        verhuurdDoor = null;
         verhuurdProduct.setOpVoorraad(true);
     }
 }

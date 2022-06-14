@@ -19,6 +19,7 @@ public abstract class Product extends Observable {
         this.opVoorraad = true;
         this.verhuurPrijs = verhuurPrijs;
         this.verzekeringPrijs = verzekeringPrijs;
+        verhuur = new Verhuur(this, null, null);
     }
 
     public boolean setOpVoorraad(boolean opVoorraad) {
@@ -43,11 +44,19 @@ public abstract class Product extends Observable {
         return verzekeringPrijs * aantalDagen;
     }
 
+    public boolean isOpVoorraad() {
+        return opVoorraad;
+    }
+
+    public Verhuur getVerhuur() {
+        return verhuur;
+    }
+
     public Verhuur huurProduct(Medewerker verhuurdDoor, Klant verhuurdAan) {
         if (verhuur != null) {
             verhuur = new Verhuur(this, verhuurdDoor, verhuurdAan);
             return verhuur;
-        } else return verhuur
+        } else return verhuur;
     }
 
     public abstract String korteOmschrijvingProduct();
